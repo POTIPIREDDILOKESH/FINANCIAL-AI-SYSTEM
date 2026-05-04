@@ -1,200 +1,232 @@
-# Insurance Claims Severity Prediction
+# 💰 Financial AI System
 
-A complete machine learning project that predicts insurance claim loss amounts using regression techniques. This project demonstrates end-to-end data science workflow from data exploration to model deployment with a full-stack web application.
+**Multi-Agent AI for Fraud Detection, Risk Analysis & Explainable Decision-Making**
 
-## 📊 Project Overview
+---
 
-**Dataset**: Allstate Claims Severity (Kaggle Competition)
-- **Training samples**: 188,318
-- **Test samples**: 125,546
-- **Features**: 130 (116 categorical + 14 continuous)
-- **Target**: Loss amount (insurance claim severity)
+## 🚀 Overview
 
-**Problem Type**: Regression
-**Evaluation Metric**: Mean Absolute Error (MAE)
+The **Financial AI System** is an end-to-end multi-agent AI platform designed to analyze financial transactions and generate **structured, explainable decisions** such as:
 
-## 🏗️ Project Structure
+* ✅ APPROVE
+* ⚠️ VERIFY
+* ❌ REJECT
+
+The system combines **fraud detection, risk modeling, and Retrieval-Augmented Generation (RAG)** to ensure decisions are **accurate, explainable, and grounded in data**.
+
+---
+
+## 🎯 Problem Statement
+
+Traditional financial systems suffer from:
+
+* Lack of explainability in ML models
+* Isolated fraud/risk analysis without context
+* Manual review delays
+* Hallucinations in LLM-based systems
+
+This project addresses these challenges by building a **modular, explainable AI system** for real-world financial decision-making.
+
+---
+
+## 🧠 Key Features
+
+* 🔍 **Fraud Detection** – Identifies suspicious transaction patterns
+* 📊 **Risk Assessment** – Computes risk scores using behavioral signals
+* 📚 **RAG (Retrieval-Augmented Generation)** – Grounds responses using financial knowledge
+* 🤖 **Multi-Agent Architecture** – Specialized agents for each task
+* 🧾 **Explainability** – Provides reasoning for every decision
+* 🧠 **Memory Store** – Tracks past queries, decisions, and alerts
+* 🌐 **API + UI** – FastAPI backend with Streamlit frontend
+
+---
+
+## 🏗️ System Architecture
 
 ```
-insurance-project/
-├── main.ipynb              # Main analysis notebook
-├── app.py                  # FastAPI backend server
-├── streamlit_app.py        # Streamlit web interface
-├── run.py                  # Launcher script for easy deployment
-├── train.csv              # Training dataset
-├── test.csv               # Test dataset
-├── requirements.txt       # Python dependencies
-├── submission.csv         # Generated predictions
-├── model.pkl             # Saved XGBoost model
-├── rf_model.pkl          # Saved Random Forest model
-└── README.md             # Project documentation
+User Input
+   ↓
+Planner Agent
+   ↓
+Fraud Agent → Risk Agent → Research Agent (RAG)
+   ↓
+Advisory Agent
+   ↓
+Explainability Agent
+   ↓
+Memory Store
+   ↓
+Final Output (API/UI)
 ```
 
-## 🚀 Quick Start
+---
 
-### Prerequisites
-- Python 3.8+
-- Jupyter Notebook
+## ⚙️ Workflow
 
-### Installation
+1. **User Input**
 
-1. Clone or download the project
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+   * Query + transaction details
 
-### Running the Application
+2. **Planner Agent**
 
-#### Quick Launch (Recommended)
+   * Determines execution flow
+
+3. **Fraud Agent**
+
+   * Detects anomalies (amount, time, location)
+
+4. **Risk Agent**
+
+   * Computes transaction risk score
+
+5. **Research Agent (RAG)**
+
+   * Retrieves relevant financial knowledge using embeddings + FAISS
+
+6. **Advisory Agent**
+
+   * Produces final decision: APPROVE / VERIFY / REJECT
+
+7. **Explainability Agent**
+
+   * Generates reasoning for decision
+
+8. **Memory Store**
+
+   * Saves history for auditability
+
+---
+
+## 🛠️ Tech Stack
+
+### 🔹 Core
+
+* Python
+* FastAPI
+* Streamlit
+
+### 🔹 AI / ML
+
+* Sentence-Transformers
+* FAISS (Vector Database)
+* NumPy, Pandas, Scikit-learn
+
+### 🔹 Architecture
+
+* Multi-Agent System (custom implementation)
+* RAG Pipeline
+* JSON-based Memory Store
+
+---
+
+## 📦 Installation
+
 ```bash
+# Clone repository
+git clone https://github.com/your-username/financial-ai-system.git
+cd financial-ai-system
+
+# Create virtual environment (recommended Python 3.10)
+python -m venv venv
+venv\Scripts\activate   # Windows
+
 # Install dependencies
-python run.py install
-
-# Run both API and web app together
-python run.py both
+pip install -r requirements.txt
 ```
 
-#### Manual Launch
+---
+
+## ▶️ Running the Application
+
+### 🔹 Start Backend (FastAPI)
+
 ```bash
-# Start the FastAPI backend
-python app.py
-
-# In a new terminal, start the Streamlit frontend
-streamlit run streamlit_app.py
+uvicorn app.api.main:app --reload
 ```
 
-#### Individual Components
+### 🔹 Start Frontend (Streamlit)
+
 ```bash
-# Run only the API
-python run.py api
-
-# Run only the web interface
-python run.py web
-
-# Check if all files are present
-python run.py check
+streamlit run frontend/streamlit_app.py
 ```
 
-### API Endpoints
+---
 
-- **GET /**: API information and status
-- **GET /health**: Health check
-- **GET /features**: List expected input features
-- **POST /predict**: Make predictions
+## 🌐 Access
 
-Example API usage:
-```python
-import requests
+* API Docs: http://127.0.0.1:8000/docs
+* UI: http://localhost:8501
 
-# Make a prediction
-response = requests.post("http://localhost:8000/predict",
-    json={
-        "features": {
-            "cont1": 0.5,
-            "cont2": 0.3,
-            "cat1": "A",
-            # ... other features
-        }
-    }
-)
+---
+
+## 📥 Sample Input
+
+```json
+{
+  "query": "Should I approve this transaction?",
+  "transaction": {
+    "transaction_id": "TXN12345",
+    "amount": 250000,
+    "location": "Mumbai",
+    "time_of_day": 3,
+    "merchant_category": "electronics",
+    "frequency_30d": 2,
+    "account_age_days": 120
+  }
+}
 ```
 
-## 📈 Methodology
+---
 
-### 1. Data Exploration
-- Analyzed data types and missing values
-- Visualized target variable distribution
-- Examined feature correlations
+## 📤 Sample Output
 
-### 2. Feature Engineering
-- Log-transformed skewed target variable
-- One-hot encoded categorical features
-- Combined train/test for consistent preprocessing
+```json
+{
+  "decision": "VERIFY",
+  "fraud_risk": "MEDIUM",
+  "risk_level": "MEDIUM",
+  "explanation": "High transaction amount at unusual time increases risk"
+}
+```
 
-### 3. Model Development
-- **Random Forest**: Baseline ensemble model
-- **XGBoost**: Advanced gradient boosting model
-- Hyperparameter tuning for optimal performance
+---
 
-### 4. Model Evaluation
-- Cross-validation for robust assessment
-- MAE calculation on both log and actual scales
-- Feature importance analysis
+## 🧠 Decision Logic
 
-## 📊 Results
+* **High Fraud Risk → REJECT**
+* **Medium Fraud Risk → VERIFY**
+* **Low Fraud + Low Risk → APPROVE**
 
-| Model | MAE (Log Scale) | MAE (Actual Scale) | Improvement vs Baseline |
-|-------|-----------------|-------------------|-------------------------|
-| Baseline (Mean) | 0.658 | 1,798 | - |
-| Random Forest | 0.458 | 1,248 | 30.5% |
-| **XGBoost** | **0.416** | **1,141** | **36.5%** |
+---
 
-**Key Achievement**: XGBoost model achieves competitive performance (top 50% on Kaggle leaderboard)
+## 📊 Use Cases
 
-## 🛠️ Technologies Used
+* Banking fraud detection systems
+* Payment gateways
+* Fintech risk analysis
+* Credit decision systems
 
-- **Python**: Core programming language
-- **pandas**: Data manipulation and analysis
-- **NumPy**: Numerical computing
-- **scikit-learn**: Machine learning algorithms
-- **XGBoost**: Gradient boosting framework
-- **matplotlib/seaborn**: Data visualization
-- **Jupyter Notebook**: Interactive development environment
-- **FastAPI**: REST API framework for model serving
-- **Streamlit**: Web application framework for UI
-- **Uvicorn**: ASGI server for FastAPI
-- **Pydantic**: Data validation for API
+---
 
-## 📝 Skills Demonstrated
+## 🚀 Future Improvements
 
-- Data preprocessing and feature engineering
-- Exploratory data analysis
-- Machine learning model development
-- Model evaluation and validation
-- Python programming best practices
-- Technical documentation
-- **REST API development with FastAPI**
-- **Web application development with Streamlit**
-- **Model deployment and serving**
-- **Full-stack ML application architecture**
+* Real-time streaming pipeline
+* Advanced ML-based fraud models
+* Cloud deployment (AWS/GCP)
+* Scalable vector DB (Pinecone)
+* Feedback-based learning
 
-## 🌐 Web Application Features
+---
 
-### Streamlit Interface
-- **Interactive Prediction**: Input claim features and get instant predictions
-- **Real-time Validation**: Automatic input validation and error handling
-- **Visual Analytics**: Model performance metrics and data insights
-- **User-friendly Design**: Clean, professional interface with intuitive controls
+## 👨‍💻 Author
 
-### FastAPI Backend
-- **RESTful API**: Standardized endpoints for model predictions
-- **Automatic Documentation**: Interactive API docs at `/docs`
-- **Input Validation**: Pydantic models ensure data integrity
-- **Error Handling**: Comprehensive error responses and logging
-- **Health Monitoring**: API status and model health checks
+**Lokesh P**
+Computer Science Engineer | AI/ML Enthusiast
 
-### Key Features
-- 🔮 **Single Claim Prediction**: Predict loss for individual claims
-- 📊 **Batch Analysis**: Process multiple claims (planned feature)
-- 📈 **Model Insights**: Performance metrics and visualizations
-- 🔧 **API Integration**: RESTful endpoints for external integrations
+---
 
-## 🔄 Future Improvements
+## ⭐ Key Highlight
 
-- Hyperparameter optimization with GridSearchCV
-- Feature selection to reduce dimensionality
-- Ensemble model stacking
-- Cross-validation implementation
-- Advanced feature engineering techniques
+> This project demonstrates the ability to design **end-to-end AI systems**, combining multi-agent orchestration, RAG, and explainable decision-making for real-world applications.
 
-## 📄 License
-
-This project is for educational purposes. Dataset from Kaggle Allstate Claims Severity competition.
-
-## 👤 Author
-
-Data Science Portfolio Project
-- Demonstrates practical ML skills
-- End-to-end project workflow
-- Production-ready code structure
+---
