@@ -1,0 +1,450 @@
+{
+  "decisions": [
+    {
+      "timestamp": "2026-05-04T19:28:54.635359",
+      "decision": {
+        "query": "Should I approve this transaction?",
+        "recommendation": {
+          "decision": "HOLD",
+          "reasoning": [],
+          "risk_level": "MEDIUM",
+          "confidence_score": 0.5,
+          "sources": [],
+          "disclaimer": "This is not investment advice. Consult a financial advisor."
+        },
+        "fraud_analysis": {},
+        "risk_analysis": {},
+        "transaction": {
+          "transaction_id": "TXN12345",
+          "amount": 250000.0,
+          "time_of_day": 3,
+          "location": "Mumbai",
+          "merchant_category": "electronics",
+          "frequency_30d": 2,
+          "account_age_days": 120
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-04T21:45:25.177097",
+      "decision": {
+        "query": "Should I approve this transaction?",
+        "recommendation": {
+          "decision": "HOLD",
+          "reasoning": [],
+          "risk_level": "MEDIUM",
+          "confidence_score": 0.5,
+          "sources": [],
+          "disclaimer": "This is not investment advice. Consult a financial advisor."
+        },
+        "fraud_analysis": {},
+        "risk_analysis": {},
+        "transaction": {
+          "transaction_id": "TXN12345",
+          "amount": 250000.0,
+          "time_of_day": 3,
+          "location": "Mumbai",
+          "merchant_category": "electronics",
+          "frequency_30d": 2,
+          "account_age_days": 120
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-04T21:52:02.037659",
+      "decision": {
+        "query": "Should I approve this transaction?",
+        "recommendation": {
+          "decision": "VERIFY",
+          "reasoning": [
+            "Transaction requires verification"
+          ],
+          "risk_level": "MEDIUM",
+          "confidence_score": 0.5,
+          "sources": [
+            "Fraud Detection Analysis",
+            "Risk Assessment",
+            "Market Research"
+          ],
+          "disclaimer": "This is not investment advice. Consult a financial advisor."
+        },
+        "fraud_analysis": {
+          "transaction_id": "TXN12345",
+          "status": "ANALYZED",
+          "fraud_risk": "MEDIUM",
+          "anomaly_score": 0.5677793467285337,
+          "fraud_indicators": 2,
+          "reasons": [
+            "Unusually high transaction amount",
+            "Transaction at unusual hour"
+          ],
+          "confidence": 0.6,
+          "ml_prediction": "FRAUD",
+          "recommended_action": "VERIFY",
+          "alert_level": "WARNING"
+        },
+        "risk_analysis": {
+          "transaction_risk_score": 0.3,
+          "transaction_risk_level": "MEDIUM",
+          "risk_breakdown": {
+            "amount": 0.8,
+            "location": 0.1,
+            "merchant": 0.2,
+            "account_age": 0.1
+          },
+          "recommendation": "VERIFY"
+        },
+        "transaction": {
+          "transaction_id": "TXN12345",
+          "amount": 250000.0,
+          "time_of_day": 3,
+          "location": "Mumbai",
+          "merchant_category": "electronics",
+          "frequency_30d": 2,
+          "account_age_days": 120
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-04T22:15:39.581355",
+      "decision": {
+        "query": "Should I approve this transaction?",
+        "recommendation": {
+          "decision": "VERIFY",
+          "reasoning": [
+            "Transaction requires verification"
+          ],
+          "risk_level": "MEDIUM",
+          "confidence_score": 0.45,
+          "sources": [
+            "Fraud Detection Analysis",
+            "Risk Assessment",
+            "Market Research"
+          ],
+          "disclaimer": "This is not investment advice. Consult a financial advisor."
+        },
+        "fraud_analysis": {
+          "transaction_id": "TXN12345",
+          "status": "ANALYZED",
+          "fraud_risk": "MEDIUM",
+          "anomaly_score": 0.5677793467285337,
+          "fraud_indicators": 2,
+          "reasons": [
+            "Unusually high transaction amount",
+            "Transaction at unusual hour"
+          ],
+          "confidence": 0.6,
+          "ml_prediction": "FRAUD",
+          "recommended_action": "VERIFY",
+          "alert_level": "WARNING"
+        },
+        "risk_analysis": {
+          "transaction_risk_score": 0.3,
+          "transaction_risk_level": "MEDIUM",
+          "risk_level": "MEDIUM",
+          "risk_breakdown": {
+            "amount": 0.8,
+            "location": 0.1,
+            "merchant": 0.2,
+            "account_age": 0.1
+          },
+          "recommendation": "VERIFY"
+        },
+        "transaction": {
+          "transaction_id": "TXN12345",
+          "amount": 250000.0,
+          "time_of_day": 3,
+          "location": "Mumbai",
+          "merchant_category": "electronics",
+          "frequency_30d": 2,
+          "account_age_days": 120
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-04T23:16:41.525602",
+      "decision": {
+        "query": "Should I approve this transaction?",
+        "recommendation": {
+          "decision": "REJECT",
+          "reasoning": [
+            "Transaction flagged as high fraud risk"
+          ],
+          "risk_level": "MEDIUM",
+          "confidence_score": 0.7,
+          "sources": [
+            "Fraud Detection Analysis",
+            "Risk Assessment",
+            "Market Research"
+          ],
+          "disclaimer": "This is not investment advice. Consult a financial advisor."
+        },
+        "fraud_analysis": {
+          "transaction_id": "TXN999",
+          "status": "ANALYZED",
+          "fraud_risk": "HIGH",
+          "anomaly_score": 0.5679357191594672,
+          "fraud_indicators": 3,
+          "reasons": [
+            "Unusually high transaction amount",
+            "Transaction at unusual hour",
+            "High-risk location: UK"
+          ],
+          "confidence": 0.95,
+          "ml_prediction": "FRAUD",
+          "recommended_action": "BLOCK",
+          "alert_level": "CRITICAL"
+        },
+        "risk_analysis": {
+          "transaction_risk_score": 0.45,
+          "transaction_risk_level": "MEDIUM",
+          "risk_level": "MEDIUM",
+          "risk_breakdown": {
+            "amount": 0.8,
+            "location": 0.7,
+            "merchant": 0.2,
+            "account_age": 0.1
+          },
+          "recommendation": "VERIFY"
+        },
+        "transaction": {
+          "transaction_id": "TXN999",
+          "amount": 250000.0,
+          "time_of_day": 2,
+          "location": "UK",
+          "merchant_category": "electronics",
+          "frequency_30d": 1,
+          "account_age_days": 120
+        }
+      }
+    }
+  ],
+  "queries": [
+    {
+      "timestamp": "2026-05-04T19:28:54.652595",
+      "query": "Should I approve this transaction?",
+      "result": {
+        "recommendation": {
+          "decision": "HOLD",
+          "reasoning": [],
+          "risk_level": "MEDIUM",
+          "confidence_score": 0.5,
+          "sources": [],
+          "disclaimer": "This is not investment advice. Consult a financial advisor."
+        },
+        "errors": []
+      }
+    },
+    {
+      "timestamp": "2026-05-04T21:45:25.181132",
+      "query": "Should I approve this transaction?",
+      "result": {
+        "recommendation": {
+          "decision": "HOLD",
+          "reasoning": [],
+          "risk_level": "MEDIUM",
+          "confidence_score": 0.5,
+          "sources": [],
+          "disclaimer": "This is not investment advice. Consult a financial advisor."
+        },
+        "errors": []
+      }
+    },
+    {
+      "timestamp": "2026-05-04T21:52:02.045752",
+      "query": "Should I approve this transaction?",
+      "result": {
+        "recommendation": {
+          "decision": "VERIFY",
+          "reasoning": [
+            "Transaction requires verification"
+          ],
+          "risk_level": "MEDIUM",
+          "confidence_score": 0.5,
+          "sources": [
+            "Fraud Detection Analysis",
+            "Risk Assessment",
+            "Market Research"
+          ],
+          "disclaimer": "This is not investment advice. Consult a financial advisor."
+        },
+        "errors": []
+      }
+    },
+    {
+      "timestamp": "2026-05-04T22:15:39.592593",
+      "query": "Should I approve this transaction?",
+      "result": {
+        "recommendation": {
+          "decision": "VERIFY",
+          "reasoning": [
+            "Transaction requires verification"
+          ],
+          "risk_level": "MEDIUM",
+          "confidence_score": 0.45,
+          "sources": [
+            "Fraud Detection Analysis",
+            "Risk Assessment",
+            "Market Research"
+          ],
+          "disclaimer": "This is not investment advice. Consult a financial advisor."
+        },
+        "errors": []
+      }
+    },
+    {
+      "timestamp": "2026-05-04T23:16:41.538670",
+      "query": "Should I approve this transaction?",
+      "result": {
+        "recommendation": {
+          "decision": "REJECT",
+          "reasoning": [
+            "Transaction flagged as high fraud risk"
+          ],
+          "risk_level": "MEDIUM",
+          "confidence_score": 0.7,
+          "sources": [
+            "Fraud Detection Analysis",
+            "Risk Assessment",
+            "Market Research"
+          ],
+          "disclaimer": "This is not investment advice. Consult a financial advisor."
+        },
+        "errors": []
+      }
+    }
+  ],
+  "fraud_alerts": [
+    {
+      "timestamp": "2026-05-04T21:52:02.040620",
+      "transaction": {
+        "transaction_id": "TXN12345",
+        "amount": 250000.0,
+        "time_of_day": 3,
+        "location": "Mumbai",
+        "merchant_category": "electronics",
+        "frequency_30d": 2,
+        "account_age_days": 120
+      },
+      "fraud_assessment": {
+        "transaction_id": "TXN12345",
+        "status": "ANALYZED",
+        "fraud_risk": "MEDIUM",
+        "anomaly_score": 0.5677793467285337,
+        "fraud_indicators": 2,
+        "reasons": [
+          "Unusually high transaction amount",
+          "Transaction at unusual hour"
+        ],
+        "confidence": 0.6,
+        "ml_prediction": "FRAUD",
+        "recommended_action": "VERIFY",
+        "alert_level": "WARNING"
+      }
+    },
+    {
+      "timestamp": "2026-05-04T22:15:39.584879",
+      "transaction": {
+        "transaction_id": "TXN12345",
+        "amount": 250000.0,
+        "time_of_day": 3,
+        "location": "Mumbai",
+        "merchant_category": "electronics",
+        "frequency_30d": 2,
+        "account_age_days": 120
+      },
+      "fraud_assessment": {
+        "transaction_id": "TXN12345",
+        "status": "ANALYZED",
+        "fraud_risk": "MEDIUM",
+        "anomaly_score": 0.5677793467285337,
+        "fraud_indicators": 2,
+        "reasons": [
+          "Unusually high transaction amount",
+          "Transaction at unusual hour"
+        ],
+        "confidence": 0.6,
+        "ml_prediction": "FRAUD",
+        "recommended_action": "VERIFY",
+        "alert_level": "WARNING"
+      }
+    },
+    {
+      "timestamp": "2026-05-04T23:16:41.531061",
+      "transaction": {
+        "transaction_id": "TXN999",
+        "amount": 250000.0,
+        "time_of_day": 2,
+        "location": "UK",
+        "merchant_category": "electronics",
+        "frequency_30d": 1,
+        "account_age_days": 120
+      },
+      "fraud_assessment": {
+        "transaction_id": "TXN999",
+        "status": "ANALYZED",
+        "fraud_risk": "HIGH",
+        "anomaly_score": 0.5679357191594672,
+        "fraud_indicators": 3,
+        "reasons": [
+          "Unusually high transaction amount",
+          "Transaction at unusual hour",
+          "High-risk location: UK"
+        ],
+        "confidence": 0.95,
+        "ml_prediction": "FRAUD",
+        "recommended_action": "BLOCK",
+        "alert_level": "CRITICAL"
+      }
+    }
+  ],
+  "risk_assessments": [
+    {
+      "timestamp": "2026-05-04T21:52:02.042499",
+      "asset": "TXN12345",
+      "risk_assessment": {
+        "transaction_risk_score": 0.3,
+        "transaction_risk_level": "MEDIUM",
+        "risk_breakdown": {
+          "amount": 0.8,
+          "location": 0.1,
+          "merchant": 0.2,
+          "account_age": 0.1
+        },
+        "recommendation": "VERIFY"
+      }
+    },
+    {
+      "timestamp": "2026-05-04T22:15:39.588728",
+      "asset": "TXN12345",
+      "risk_assessment": {
+        "transaction_risk_score": 0.3,
+        "transaction_risk_level": "MEDIUM",
+        "risk_level": "MEDIUM",
+        "risk_breakdown": {
+          "amount": 0.8,
+          "location": 0.1,
+          "merchant": 0.2,
+          "account_age": 0.1
+        },
+        "recommendation": "VERIFY"
+      }
+    },
+    {
+      "timestamp": "2026-05-04T23:16:41.535060",
+      "asset": "TXN999",
+      "risk_assessment": {
+        "transaction_risk_score": 0.45,
+        "transaction_risk_level": "MEDIUM",
+        "risk_level": "MEDIUM",
+        "risk_breakdown": {
+          "amount": 0.8,
+          "location": 0.7,
+          "merchant": 0.2,
+          "account_age": 0.1
+        },
+        "recommendation": "VERIFY"
+      }
+    }
+  ]
+}
